@@ -1,0 +1,18 @@
+<span *ngIf="userPlaces">
+  <div class="col-md-12 info-bg">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let item of userPlaces;let i = index">
+      <div class="card card--small">
+        <span class="card__num">{{ i+1 }}</span>
+        <div class="card__image">
+          <img src="{{ item.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150}) }}" alt="">
+        </div>
+        <h2 class="card__title">{{ item.name }}</h2>
+        <span class="card__subtitle">{{ item.vicinity }}</span>
+        <div class="card__action-bar">
+          <button class="card__button" (click)="savePlace(item)"><i class="glyphicon glyphicon-heart"></i></button>
+          <a class="card__button" href="https://google.com/maps/search/{{ item.name }}" target="'_blank">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</span>

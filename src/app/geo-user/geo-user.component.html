@@ -1,0 +1,97 @@
+<div class="alert alert-warning alert-dismissible alert-custom" role="alert" *ngIf="alertShow">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" ><span (click)='alertChange()'>&times;</span></button>
+  <strong>OK! </strong> <span [innerHTML]=alertMessage></span>
+</div>
+<app-navbar></app-navbar>
+<div class="g-profile">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#routes" aria-controls="routes" role="tab" data-toggle="tab">Routes</a></li>
+    <li role="presentation"><a href="#places" aria-controls="places" role="tab" data-toggle="tab">Places</a></li>
+    <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="routes">
+        <div class="b-panel-routes info-bg" *ngFor="let items of allRoutes; let i = index">
+          <div class="col-md-12">
+            <div class="col-md-2 text-center">
+              <div class="tag">
+                <h3 class="h3">{{ items.place }}</h3>
+              </div>
+              <div class="time">Type: {{ items.type }}</div>
+              <div class="time">Route total time: {{ items.time }}</div>
+              <div class="comments" *ngFor="let notes of items['comment']">
+                "{{ notes }}"
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let route of items['mapBD']; let idx = index;">
+                <div class="card card--small">
+                  <span class="card__num">{{ idx + 1 }}</span>
+                  <div class="card__image">
+                    <img src="{{ route.icon }}" alt="">
+                  </div>
+                  <h2 class="card__title">{{ route.name }}</h2>
+                  <span class="card__subtitle">{{ route.vicinity }}</span>
+                  <div class="card__action-bar">
+                    <a class="card__button" href="https://google.com/maps/search/{{ route.name }}" target="'_blank">LEARN MORE</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav class="d-nav navbar">
+            <div class="container-fluid">
+              <div class="navbar-header navbar-right n-r">
+                <a class="navbar-brand" (click)="deleteRoute(items._id)" [routerLink]="['/geouser']">Delete</a>
+                <a class="navbar-brand" href="#notes" role="tab" data-toggle="tab">Add Note</a>
+                <a class="navbar-brand" href="#">Share</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="places">
+        <div class="b-panel-routes info-bg">
+          <div class="col-md-12">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let item of allPlaces;let i = index">
+              <div class="card card--small">
+                <i class="glyphicon glyphicon-star card__mark"></i>
+                <div class="card__image">
+                  <img src="{{ item.icon }}" alt="">
+                </div>
+                <h2 class="card__title">{{ item.name }}</h2>
+                <span class="card__subtitle">{{ item.location }}</span>
+                <div class="card__action-bar">
+                  <a class="card__button" href="https://google.com/maps/search/{{ item.name }}" target="'_blank">LEARN MORE</a>
+                  <a class="card__button" (click)="deletePlace(item._id)">REMOVE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="notes">
+        <div class="col-md-12 text-center">
+          <h3 class="h3">ROUTE NOTES</h3>
+        </div>
+        <div class="b-panel-routes info-bg" *ngFor="let items of allRoutes">
+          <div class="col-md-12">
+            <div class="col-md-2 text-center">
+              <div class="tag">
+                <h3 class="h3">{{ items.place }}</h3>
+              </div>
+              <div class="time">Type: {{ items.type }}</div>
+              <div class="time">Route total time: {{ items.time }}</div>
+              <div class="comments-textarea">Write a note or experience on the route and remember it forever</div>
+            </div>
+            <div class="col-md-10">
+              <textarea class="form-control" rows="3" #inputNote></textarea>
+              <a class="btn btn-success btn-lg btn-custom-1 btn-custom-color-1" (click)="sendNote(items._id,inputNote.value)">Send note!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

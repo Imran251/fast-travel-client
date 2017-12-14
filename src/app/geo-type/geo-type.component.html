@@ -1,0 +1,14 @@
+<div class="b-form form-route">
+  <div class="panel panel-info">
+    <div class="panel-body">
+      <div class="form-group">
+        <div class="panel-type">
+          <span class="nam">Type</span>
+          <select class="form-control selectmenu" [ngModel]="typeSelect" (ngModelChange)="getType($event)">
+            <option [ngValue]="item.value" *ngFor="let item of types">{{ item.name }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
