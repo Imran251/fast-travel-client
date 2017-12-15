@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { SessionService } from "./session.service";
 import { SharedService } from "./shared.service";
 
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core';
 
 import {} from '@types/googlemaps';
 

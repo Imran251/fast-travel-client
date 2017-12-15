@@ -1,5 +1,5 @@
 import { Component, NgZone, NgModule, OnInit, Input, Output, ElementRef, ViewChild, EventEmitter} from '@angular/core';
-import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
+import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
 import { SessionService } from '../session.service';
 
 @Component({
@@ -21,8 +21,8 @@ export class GeoInputComponent implements OnInit {
   hours = [];
   hoursSelect;
 
-  hourInputDone = false;
-  minuteInputDone = false;
+  hourInputDone = true;
+  minuteInputDone = true;
 
   user: any;
 
@@ -105,12 +105,12 @@ export class GeoInputComponent implements OnInit {
   public getHour(hour){
     this.hoursSelect = hour;
     this.hourInputDone = true;
-    // this.checkInputReady()
+    this.checkInputReady();
   }
   public getMinute(minute){
     this.minutesSelect = minute;
     this.minuteInputDone = true;
-    // this.checkInputReady()
+    this.checkInputReady();
   }
 
   checkInputReady(){

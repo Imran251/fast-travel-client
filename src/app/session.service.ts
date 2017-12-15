@@ -10,7 +10,7 @@ const BASEURL:string = environment.baseurl;
 
 @Injectable()
 export class SessionService {
-  options = {widthCredentials: true};
+  options = {withCredentials: true};
   user :any;
 
   constructor(private http: Http) { }

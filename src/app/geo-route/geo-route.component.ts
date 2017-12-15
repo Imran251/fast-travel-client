@@ -1,10 +1,10 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
-import { GoogleMapsAPIWrapper }  from 'angular2-google-maps/core';
+import { GoogleMapsAPIWrapper }  from '@agm/core';
 
 declare var google: any;
 
 @Component({
-  selector: 'sebm-google-map-directions',
+  selector: 'manual-directions',
   templateUrl: './geo-route.component.html',
   styleUrls: ['./geo-route.component.css']
 })
@@ -82,6 +82,7 @@ export class GeoRouteComponent implements OnInit {
       var totaltime = 0;
 
       function attachInfoWindow(marker, legIndex, leg) {
+        console.log(leg);
         var infowindow = new google.maps.InfoWindow({
           content: "<div class='windowPoi'><img src='"+leg.photos[0].getUrl({'maxWidth': 80, 'maxHeight': 80})+"'/><div class='windowPoi-info'><span>Stop number: <strong>"+legIndex+"</strong></span><h2 class='h2'>"+leg.name+"</h2><p>"+leg.vicinity+"</p></div></div>"
         });
@@ -170,8 +171,8 @@ export class GeoRouteComponent implements OnInit {
               me.dataRoute(response);
               me.showRoute(responseAll);
 
-              console.log(response);
-              console.log(responseAll);
+              // console.log(response);
+              // console.log(responseAll);
 
               me.directionsDisplay.setDirections(response);
 

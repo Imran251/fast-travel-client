@@ -1,3 +1,51 @@
-<p>
-  map works!
-</p>
+<div class="alert alert-warning alert-dismissible alert-custom" role="alert" *ngIf="alertShow">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" ><span (click)='alertChange()'>&times;</span></button>
+  <strong>OK! </strong><span [innerHTML]=alertMessage></span>
+</div>
+<app-navbar></app-navbar>
+<div class="g-route" *ngIf="!dataComplete">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-8 col-lg-offset-2">
+        <app-geo-type (selectionCompletedType)="typeSelect($event)"></app-geo-type>
+      </div>
+      <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-8 col-lg-offset-2">
+        <app-geo-input name="Origin time" (selectionCompleted)="originSelected($event)"></app-geo-input>
+      </div>
+      <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-8 col-lg-offset-2">
+        <app-geo-input name="Destination time" (selectionCompleted)="destinationSelected($event)"></app-geo-input>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="g-map" *ngIf="dataComplete">
+  <div class="row">
+    <div class="col-md-12">
+      <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" [styles]="mapCustomStyles">
+        <agm-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="iconurl">
+          <agm-info-window>
+            <strong>Current position</strong>
+          </agm-info-window>
+        </agm-marker>
+        <manual-directions *ngIf="location" [typeSearch]="typeSearch" [origin]="origin" [destination]="destination" (eventCompleted)="showRoute($event)" (eventCompletedData)="dataRoute($event)"></manual-directions>
+      </agm-map>
+    </div>
+    <div class="col-md-12" *ngIf="userTime">
+      <nav class="nav-results navbar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <span class="navbar-brand">Time selected: <span>{{ userTime }}</span></span>
+            <span class="navbar-brand">Origin: <span>{{ origin.location.name }}</span></span>
+            <span class="navbar-brand">Destination: <span>{{ destination.location.name }}</span></span>
+            <span class="navbar-brand">Search type: <span>{{ typeSearch }}</span></span>
+            <div class="p-r">
+              <a class="navbar-brand" (click)="setMapRoute()">SAVE ROUTE</a>
+              <a class="navbar-brand" (click)="dataCompleteFalse()">SEARCH AGAIN</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <app-geo-info *ngIf="location" [origin]="origin" [destination]="destination" [userPlaces]="userPlaces" [userPlacesRoute]="userPlacesRoute" (alertNotification)="getAlert($event)"></app-geo-info>
+  </div>
+</div>
