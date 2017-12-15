@@ -1,3 +1,14 @@
-<p>
-  navbar works!
-</p>
+<nav class="b-nav navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header n-l">
+      <a class="navbar-brand nav-logo" [routerLink]="['/geomap']">
+        <img src="../../assets/img/logo.svg" alt="">
+      </a>
+    </div>
+    <div class="navbar-header navbar-right n-r">
+      <a class="navbar-brand brand-link" [routerLink]="['/geouser']">Welcome <strong>{{ welcome }}</strong></a>
+      <a class="navbar-brand brand-link" [routerLink]="['/geomap']">Back</a>
+      <a class="navbar-brand brand-link" [routerLink]="['/home']" (click)="logout()"><i class="glyphicon glyphicon-log-out"></i></a>
+    </div>
+  </div>
+</nav>

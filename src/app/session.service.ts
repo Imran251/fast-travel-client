@@ -10,11 +10,10 @@ const BASEURL:string = environment.baseurl;
 
 @Injectable()
 export class SessionService {
-  options = {withCredentials: true};
+  options = {withCredentials:true};
   user :any;
 
   constructor(private http: Http) { }
-
 
   handleError(e) {
     return Observable.throw(e.json().message);
@@ -60,7 +59,7 @@ export class SessionService {
   }
 
   postMapRoute(map) {
-    return this.http.post(`${BASEURL}/route`, this.options)
+    return this.http.post(`${BASEURL}/route`, map, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }
@@ -72,7 +71,7 @@ export class SessionService {
   }
 
   postNotes(noteInfo) {
-    return this.http.post(`${BASEURL}/notes/`, this.options)
+    return this.http.post(`${BASEURL}/notes/`,noteInfo, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }
@@ -84,7 +83,7 @@ export class SessionService {
   }
 
   postMapPlace(place) {
-    return this.http.post(`${BASEURL}/place`, this.options)
+    return this.http.post(`${BASEURL}/place`, place, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }

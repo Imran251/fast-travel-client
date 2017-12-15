@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $("#carousel-example-generic").carousel();
   }
 
 }
