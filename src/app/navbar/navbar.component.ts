@@ -14,8 +14,14 @@ export class NavbarComponent implements OnInit {
   constructor(private session: SessionService) { }
 
   ngOnInit() {
-    this.user = this.session.user;
-    this.welcome = this.user.username;
+    this.session.isLoggedIn()
+      .subscribe(() => {
+        this.user = this.session.user;
+
+        if (this.user) {
+          this.welcome = this.user.username;
+        }
+      });
   }
 
   logout() {

@@ -133,6 +133,7 @@ export class GeoRouteComponent implements OnInit {
       this.directionsDisplay.setDirections({routes: []});
 
       doNearbyQuery(servicePlaces, request).then((successMessage) => {
+        console.log('nearby');
         var responseAll = successMessage[0]
         var optRoute = {
           origin: {placeId : this.originPlaceId },
@@ -147,9 +148,10 @@ export class GeoRouteComponent implements OnInit {
 
         let that = this;
         directionsService.route(optRoute, function(response: any, status: any) {
+          console.log('route');
           that.control++;
           if (status === 'OK') {
-
+console.log('route OKAY');
             showRoutesMap = responseAll
             var route = response.routes[0];
             let i = 0;
@@ -207,6 +209,7 @@ export class GeoRouteComponent implements OnInit {
               }
             }
           } else {
+            console.log('route NOT okay');
             if (status == 'ZERO_RESULTS') {
               console.log('No route could be found between the origin and destination.');
             } else if (status == 'UNKNOWN_ERROR') {
