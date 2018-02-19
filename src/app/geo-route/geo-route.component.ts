@@ -211,7 +211,7 @@ export class GeoRouteComponent implements OnInit {
           } else {
             console.log('route NOT okay');
             if (status == 'ZERO_RESULTS') {
-              console.log('No route could be found between the origin and destination.');
+              console.log('No route could be found between the origin and destinations.');
             } else if (status == 'UNKNOWN_ERROR') {
               console.log('A directions request could not be processed due to a server error. The request may succeed if you try again.');
             } else if (status == 'REQUEST_DENIED') {
@@ -220,7 +220,7 @@ export class GeoRouteComponent implements OnInit {
               console.log('The webpage has gone over the requests limit in too short a period of time.');
             } else if (status == 'NOT_FOUND') {
               console.log('At least one of the origin, destination, or waypoints could not be geocoded.');
-            } else if (status == 'INVALID_REQUEST') {
+            } else if (status == 'INVALID REQUEST') {
               console.log('The DirectionsRequest provided was invalid.');
             } else {
               console.log("There was an unknown error in your request. Requeststatus: nn"+status);
