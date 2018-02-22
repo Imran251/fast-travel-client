@@ -221,7 +221,7 @@ export class GeoRouteComponent implements OnInit {
             } else if (status == 'NOT_FOUND') {
               console.log('At least one of the origin, destination, or waypoints could not be geocoded.');
             } else if (status == 'INVALID REQUEST AND REQUEST DENIED') {
-              console.log('The DirectionsRequest provided was invalid.');
+              console.log('The DirectionsRequest provided was invalid and Error');
             } else {
               console.log("There was an unknown error in your request. Requeststatus: nn"+status);
             }
