@@ -211,7 +211,7 @@ export class GeoRouteComponent implements OnInit {
           } else {
             console.log('route NOT okay');
             if (status == 'ZERO_RESULTS') {
-              console.log('No route could be found between the origin and destinations.');
+              console.log('No routes could be found between the origin and destinations.');
             } else if (status == 'UNKNOWN_ERROR') {
               console.log('A directions request could not be processed due to a server error. The request may succeed if you try again.');
             } else if (status == 'REQUEST_DENIED') {
