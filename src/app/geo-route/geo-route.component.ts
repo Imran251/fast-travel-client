@@ -223,7 +223,7 @@ export class GeoRouteComponent implements OnInit {
             } else if (status == 'INVALID REQUEST AND REQUEST DENIED') {
               console.log('The DirectionsRequest provided was invalid and there is Error');
             } else {
-              console.log("There was an unknown error in your request. Requeststatus: nn"+status);
+              console.log("There was an unknown error in your request. Requeststatus is: nn"+status);
             }
           }
         });
