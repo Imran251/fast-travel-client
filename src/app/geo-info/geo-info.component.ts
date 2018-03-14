@@ -44,7 +44,7 @@ export class GeoInfoComponent implements OnInit {
     this.newPlace.user = this.user._id;
     this.newPlace.name = place.name;
     this.newPlace.location = place.vicinity;
-    this.newPlace.icon = place.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150})
+    this.newPlace.icon = place.photos[0].getUrl({'maxWidth': 170, 'maxHeight': 150})
 
     this.session.postMapPlace(this.newPlace)
     .subscribe(
