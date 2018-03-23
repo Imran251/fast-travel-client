@@ -141,7 +141,7 @@ export class GeoRouteComponent implements OnInit {
           travelMode: 'WALKING',
           waypoints: successMessage[1],
           transitOptions: {
-            routingPreference: 'LESS_WALKING'
+            routingPreference: 'LESS WALKING'
           },
           optimizeWaypoints: true,
         }
