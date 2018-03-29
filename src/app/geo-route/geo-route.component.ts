@@ -148,7 +148,7 @@ export class GeoRouteComponent implements OnInit {
 
         let that = this;
         directionsService.route(optRoute, function(response: any, status: any) {
-          console.log('routes and distance');
+          console.log('routes and distances');
           that.control++;
           if (status === 'OKAY') {
            console.log('routes is OKAY');
