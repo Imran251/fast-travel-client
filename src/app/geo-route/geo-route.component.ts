@@ -151,7 +151,7 @@ export class GeoRouteComponent implements OnInit {
           console.log('routes and distances');
           that.control++;
           if (status === 'OKAY') {
-           console.log('routes is OKAY');
+           console.log('routes are OKAY');
             showRoutesMap = responseAll
             var route = response.routes[0];
             let i = 0;
