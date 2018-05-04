@@ -54,7 +54,7 @@ export class GeoInfoComponent implements OnInit {
 
     this.alertNotification.emit({
       alertShow : true,
-      alertMessage : "The place has to be SAVED, check on your profile to update"
+      alertMessage : "The place has to be SAVED, check on your profile to see the updates"
     })
   }
 
