@@ -60,7 +60,7 @@ export class GeoUserComponent implements OnInit {
       .subscribe(data => {
         this.allRoutes = data;
         this.alertShow = true
-        this.alertMessage = "The route has been DELETED"
+        this.alertMessage = "The route has been DELETED on your profile"
         setTimeout(function(){
           this.alertShow = false
         }, 3000);
