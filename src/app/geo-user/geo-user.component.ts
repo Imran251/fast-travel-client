@@ -75,7 +75,7 @@ export class GeoUserComponent implements OnInit {
       .subscribe(data => {
         this.allPlaces = data;
         this.alertShow = true
-        this.alertMessage = "The place has been DELETED"
+        this.alertMessage = "The place has been DELETED and profile is saved"
         setTimeout(function(){
           this.alertShow = false
         }, 3000);
