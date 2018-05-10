@@ -213,7 +213,7 @@ export class GeoRouteComponent implements OnInit {
             if (status == 'ZERO_RESULTS') {
               console.log('No routes could be found between the origin and destinations.');
             } else if (status == 'UNKNOWN_ERROR') {
-              console.log('A directions request could not be processed due to an server error. The request may succeed if you try again.');
+              console.log('A directions and trial request could not be processed due to an server error. The request may succeed if you try again.');
             } else if (status == 'REQUEST_DENIED') {
               console.log('This webpage is not allowed to use the directions service and service is rejected.');
             } else if (status == 'OVER_QUERY_LIMIT') {
