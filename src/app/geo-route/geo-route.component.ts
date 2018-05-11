@@ -215,7 +215,7 @@ export class GeoRouteComponent implements OnInit {
             } else if (status == 'UNKNOWN_ERROR') {
               console.log('A directions and trial request could not be processed due to an server error. The request may succeed if you try again.');
             } else if (status == 'REQUEST_DENIED') {
-              console.log('This webpage is not allowed to use the directions service and service is rejected.');
+              console.log('This webpage is not allowed to use the directions service and services are rejected.');
             } else if (status == 'OVER_QUERY_LIMIT') {
               console.log('The webpage has gone over the requests limit in too short a period of time.');
             } else if (status == 'NOT_FOUND') {
