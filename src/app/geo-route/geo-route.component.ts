@@ -219,7 +219,7 @@ export class GeoRouteComponent implements OnInit {
             } else if (status == 'OVER_QUERY_LIMIT') {
               console.log('The webpage has gone over the requests limit in too short a period of time.');
             } else if (status == 'NOT_FOUND') {
-              console.log('At least one of the origin, destination, or waypoints could not be geocoded.');
+              console.log('At least one of the origin, destination, or waypoints could not be geocoded and geolocated.');
             } else if (status == 'INVALID REQUEST AND REQUEST IS DENIED') {
               console.log('The DirectionsRequest provided was invalid and there is an Error');
             } else {
