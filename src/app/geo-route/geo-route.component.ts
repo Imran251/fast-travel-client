@@ -218,7 +218,7 @@ export class GeoRouteComponent implements OnInit {
               console.log('This webpage is not allowed to use the directions service and services are rejected.');
             } else if (status == 'OVER_QUERY_LIMIT') {
               console.log('The webpage has gone over the requests limit in too short a period of time.');
-            } else if (status == 'NOT_FOUND') {
+            } else if (status == 'PAGE_NOT_FOUND') {
               console.log('At least one of the origin, destination, or waypoints could not be geocoded and geolocated.');
             } else if (status == 'INVALID REQUEST AND REQUEST IS DENIED AND NO PERMISSION') {
               console.log('The DirectionsRequest that was provided was invalid and there is an Error');
