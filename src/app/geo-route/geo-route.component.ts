@@ -220,7 +220,7 @@ export class GeoRouteComponent implements OnInit {
               console.log('The webpage has gone over the requests limit in too short a period of time.');
             } else if (status == 'PAGE_NOT_FOUND') {
               console.log('At least one of the origin, destination, or waypoints could not be geocoded and geolocated.');
-            } else if (status == 'INVALID REQUEST AND REQUEST IS DENIED AND NO PERMISSION') {
+            } else if (status == 'INVALID REQUEST AND REQUEST IS DENIED AND HAS NO PERMISSION') {
               console.log('The DirectionsRequest that was provided was invalid and there is an Error');
             } else {
               console.log("There is an unknown error in your request. Requeststatus is: nn"+status);
