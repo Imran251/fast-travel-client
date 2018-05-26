@@ -209,7 +209,7 @@ export class GeoRouteComponent implements OnInit {
               }
             }
           } else {
-            console.log('route NOT okay');
+            console.log('route is NOT okay');
             if (status == 'ZERO_RESULTS ARE FOUND') {
               console.log('No routes could be found between their origin and destinations.');
             } else if (status == 'UNKNOWN_ERROR') {
