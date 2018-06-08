@@ -42,7 +42,7 @@ export class GeoTypeComponent implements OnInit {
       },
       {
         value: "movie_theater",
-        name: "Movie Theather"
+        name: "Movie Theathers"
       },
       {
         value: "museums",
