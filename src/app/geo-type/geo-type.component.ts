@@ -30,7 +30,7 @@ export class GeoTypeComponent implements OnInit {
       },
       {
         value: "book_store",
-        name: "Book Store"
+        name: "Book Stores"
       },
       {
         value: "church",
