@@ -224,7 +224,7 @@ export class MapComponent implements OnInit {
   setMapRoute(){
 
     this.alertShow = true
-    this.alertMessage = "The route has been SAVED, check on your profile"
+    this.alertMessage = "The route has been SAVED, check on your profiles"
 
     this.placeInfo.user = this.user._id;
     this.placeInfo.place = this.location.vicinity;
