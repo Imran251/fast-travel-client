@@ -46,7 +46,7 @@ export class GeoTypeComponent implements OnInit {
       },
       {
         value: "museums",
-        name: "Museum"
+        name: "Museums"
       }
     ];
     this.typeSelect = this.types[1].name;
