@@ -22,7 +22,7 @@ export class GeoTypeComponent implements OnInit {
     this.types = [
       {
         value: "art_gallery",
-        name: "Art Gallery"
+        name: "Art Galleries"
       },
       {
         value: "bar",
