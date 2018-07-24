@@ -94,7 +94,7 @@ export class GeoUserComponent implements OnInit {
       .subscribe(data => {
         this.allRoutes = data;
         this.alertShow = true
-        this.alertMessage = "Your note has been saved, check your saved notes on the ROUTES tab"
+        this.alertMessage = "Your note has been saved, check your saved notes on your ROUTES tab"
         setTimeout(function(){
           this.alertShow = false
         }, 3000);
